@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     public int cloudsMove;
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI livesText;
+    public GameObject coin;
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +25,7 @@ public class GameManager : MonoBehaviour
         cloudsMove = 1;
         score = 0;
         scoreText.text = "Score: " + score;
+        InvokeRepeating("SpawnCoin", 10f, 10f);
     }
 
     // Update is called once per frame
@@ -43,6 +45,11 @@ public class GameManager : MonoBehaviour
         {
             Instantiate(cloudPrefab, new Vector3(Random.Range(-11f, 11f), Random.Range(-7.5f, 7.5f), 0), Quaternion.identity);
         }
+    }
+
+    void SpawnCoin()
+    {
+        Instantiate(coin, new Vector3(Random.Range(-8, 8), 7.5f, 0), Quaternion.identity);
     }
 
     public void GameOver()

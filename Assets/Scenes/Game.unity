@@ -642,6 +642,7 @@ MonoBehaviour:
   cloudsMove: 0
   scoreText: {fileID: 191034276}
   livesText: {fileID: 2097065667}
+  coin: {fileID: 5346276328754986826, guid: a5fba454a68e4ce4b9f50c448b6a0be8, type: 3}
 --- !u!4 &1689831064
 Transform:
   m_ObjectHideFlags: 0

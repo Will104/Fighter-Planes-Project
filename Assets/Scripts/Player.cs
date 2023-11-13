@@ -52,6 +52,15 @@ public class Player : MonoBehaviour
             Instantiate(bulletPrefab, transform.position + new Vector3(0, 1, 0), Quaternion.identity);
         }
     }
+    // coin interraction
+    private void OnTriggerEnter2D(Collider2D whatIHit)
+    {
+        if(whatIHit.tag == "Coin")
+        {
+            GameObject.Find("GameManager").GetComponent<GameManager>().EarnScore(1);
+            Destroy(whatIHit.gameObject);
+        }
+    }
 
     public void LoseLife()
     {
