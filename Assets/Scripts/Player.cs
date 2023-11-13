@@ -53,6 +53,22 @@ public class Player : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D whatIHit)
+    {
+        if (whatIHit.tag == "Health")
+        {
+            livesText = GameObject.Find("GameManager").GetComponent<GameManager>().livesText;
+            livesText.text = "Lives: " + 1;
+            if (lives > 3)
+            {
+                lives = 3
+                GameObject.Find("GameManager").GetComponent<GameManager>().EarnScore(1);
+            }
+            
+            Destroy(whatIHit.gameObject);
+        }
+    }
+
     public void LoseLife()
     {
         lives--;
