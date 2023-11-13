@@ -49,7 +49,7 @@ public class GameManager : MonoBehaviour
 
     void SpawnCoin()
     {
-        Instantiate(coin, new Vector3(Random.Range(-8, 8), 7.5f, 0), Quaternion.identity);
+        Instantiate(coin, new Vector3( -8, Random.Range(-4f, 0), 0), Quaternion.identity);
     }
 
     public void GameOver()

@@ -29,7 +29,11 @@ public class MovingObjects : MonoBehaviour
         if(objectType == 3) 
         {
             //You are a coin
-            transform.Translate(new Vector3(0, -1, 0) * Time.deltaTime * 7f);
+            transform.Translate(new Vector3(1, 0, 0) * Time.deltaTime * 7f);
+            if(transform.position.x >= 9)
+            {
+                Destroy(this.gameObject);
+            }
         }
 
         if(transform.position.y > 11f || transform.position.y < -11f) 
